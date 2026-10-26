@@ -1,5 +1,5 @@
 import pygame, math
-from physics import step_forward
+from physics import step_Euler
 
 pygame.init()
 
@@ -12,7 +12,7 @@ scale = 150
 
 center = SCREEN_WIDTH//2
 
-dt = 0.05
+dt = 1/60
 t = 0
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -28,7 +28,7 @@ while run:
 
     t = t+dt
 
-    x, v = step_forward(x, v, dt)
+    x, v = step_Euler(x, v, dt)
 
     screen.fill((255,255,255))
 
